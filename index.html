@@ -1,35 +1,376 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-    <div class="wrapper">
-        <div class="Column">
-            <p class="verical">
-                <b>GET IN TOUCH </b>HAVE PROJECT IN MIND 
-            </p>
-            <div class="briefkase">
-                    <img src="./img/briefcase.png" alt="">   
-            </div> 
-        </div>
-        <div class="logo"><img src="./img/logo.png" alt=""></div>
-    
-        <div class="header">
-        <ul>
-            <li><a href="#">home</a></li>
-            <li><a href="#">about</a></li>
-            <li><a href="#">work</a></li>
-            <li><a href="#">contact</a></li>
-        </ul>
-        </div>
-       
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ЯДРО / Опасность ядерного оружия в городской застройке</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== ФОНОВЫЕ СЛОИ: шум, частицы, свечение ===== -->
+<div class="bg-noise" aria-hidden="true"></div>
+<div class="bg-glow bg-glow--a" aria-hidden="true"></div>
+<div class="bg-glow bg-glow--b" aria-hidden="true"></div>
+<div class="fallout" aria-hidden="true">
+  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+</div>
+
+<!-- ===== ШАПКА ===== -->
+<header class="site-header">
+  <a class="brand" href="#tab-threat">
+    <span class="brand__mark" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="3"/><path d="M50 22 L78 68 A34 34 0 0 1 22 68 Z" fill="currentColor"/><circle cx="50" cy="50" r="9" fill="#120c08"/></svg>
+    </span>
+    <span class="brand__text">ЯДРО<span class="brand__dot">.</span></span>
+  </a>
+
+  <!-- Кнопка-бургер: видна только на мобильных и планшетах (≤900px) -->
+  <button class="burger" type="button" aria-label="Открыть меню" aria-controls="site-nav" aria-expanded="false">
+    <span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span>
+  </button>
+
+  <nav id="site-nav" class="tabs" role="tablist" aria-label="Разделы сайта">
+    <button class="tab is-active" data-tab="threat" role="tab" aria-selected="true"><span class="tab__num">01</span>Угроза</button>
+    <button class="tab" data-tab="physics" role="tab" aria-selected="false"><span class="tab__num">02</span>Физика взрыва</button>
+    <button class="tab" data-tab="city" role="tab" aria-selected="false"><span class="tab__num">03</span>Город под ударом</button>
+    <button class="tab" data-tab="survival" role="tab" aria-selected="false"><span class="tab__num">04</span>Выживание и защита</button>
+    <button class="tab" data-tab="history" role="tab" aria-selected="false"><span class="tab__num">05</span>История и цифры</button>
+  </nav>
+
+  <div class="header-status" aria-hidden="true">
+    <span class="pulse-dot"></span>
+    <span>СВОДКА · ОБРАЗОВАТЕЛЬНОЕ ИЗДАНИЕ</span>
+  </div>
+</header>
+
+<main class="app-shell">
+<!-- ===== ВКЛАДКА 01 · УГРОЗА ===== -->
+<section class="tab-panel is-active" id="tab-threat" role="tabpanel">
+
+  <div class="hero glass-card">
+    <svg class="hero__skyline" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="bldg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#3a2415"/>
+          <stop offset="1" stop-color="#17100b"/>
+        </linearGradient>
+      </defs>
+      <g fill="url(#bldg)">
+        <rect x="0" y="180" width="90" height="140"/><rect x="100" y="120" width="70" height="200"/>
+        <rect x="185" y="200" width="60" height="120"/><rect x="260" y="90" width="80" height="230"/>
+        <rect x="355" y="160" width="55" height="160"/><rect x="425" y="60" width="75" height="260"/>
+        <rect x="515" y="140" width="90" height="180"/><rect x="620" y="30" width="70" height="290"/>
+        <rect x="705" y="110" width="85" height="210"/><rect x="805" y="170" width="60" height="150"/>
+        <rect x="880" y="80" width="90" height="240"/><rect x="985" y="150" width="70" height="170"/>
+        <rect x="1070" y="100" width="60" height="220"/><rect x="1145" y="190" width="55" height="130"/>
+      </g>
+      <g fill="#e8a33d" opacity=".5">
+        <rect x="112" y="140" width="6" height="8"/><rect x="130" y="170" width="6" height="8"/>
+        <rect x="275" y="120" width="6" height="8"/><rect x="300" y="160" width="6" height="8"/>
+        <rect x="440" y="90" width="6" height="8"/><rect x="470" y="150" width="6" height="8"/>
+        <rect x="632" y="70" width="6" height="8"/><rect x="655" y="130" width="6" height="8"/>
+        <rect x="895" y="110" width="6" height="8"/><rect x="930" y="170" width="6" height="8"/>
+      </g>
+    </svg>
+
+    <div class="hero__content">
+      <p class="kicker">Образовательный разбор · без призывов и инструкций</p>
+      <h1 class="hero__title">Ядерное оружие<br><span class="grad-text">над городом</span></h1>
+      <p class="hero__lead">
+        Ядерный взрыв — это не «огонь» в привычном смысле. Это ударная волна,
+        термическое излучение и радиоактивное заражение, которые за секунды
+        перекраивают городскую застройку. Этот сайт разбирает, как устроена
+        эта угроза — чтобы понимать её масштаб и помнить цену мира.
+      </p>
     </div>
-    <button class="work"><b>EXPLORE WORK</b></button>
-        
-    </body>
-    </html> 
+
+    <div class="hero__stats">
+      <div class="stat"><span class="stat__num" data-count="10000">0</span><span class="stat__unit">т</span><span class="stat__label">тротила эквивалентно 1 Мт — мощности «Царь-бомбы»</span></div>
+      <div class="stat"><span class="stat__num" data-count="30">0</span><span class="stat__unit">с</span><span class="stat__label">от взрыва до пика ударной волны на 1 км (для сотен килотонн)</span></div>
+      <div class="stat"><span class="stat__num" data-count="8000">0</span><span class="stat__unit">°C</span><span class="stat__label">температура в центре взрыва — горячее поверхности Солнца</span></div>
+    </div>
+  </div>
+
+  <h2 class="section-title"><span class="section-title__num">01</span>Что такое ядерное оружие</h2>
+
+  <div class="cards-grid">
+    <article class="glass-card info-card">
+      <div class="info-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="10" fill="none" stroke="currentColor" stroke-width="3"/><path d="M24 4 v10 M24 34 v10 M4 24 h10 M34 24 h10 M9 9 l7 7 M32 32 l7 7 M39 9 l-7 7 M16 32 l-7 7" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+      </div>
+      <h3>Два типа заряда</h3>
+      <p><b>Расщепляющиеся (фиссионные)</b> — уран-235 и плутоний-239. Делятся при нейтронном ударе, цепная реакция идёт за доли микросекунды.</p>
+      <p><b>Синтезные (термоядерные)</b> — «водородная бомба»: фиссионный заряд сжимает изотопы водорода (дейтерий и тритий), высвобождая в десятки раз больше энергии.</p>
+    </article>
+
+    <article class="glass-card info-card">
+      <div class="info-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="none" stroke="currentColor" stroke-width="3"/><path d="M24 8 A16 16 0 0 1 24 40 Z" fill="currentColor"/></svg>
+      </div>
+      <h3>Мощность в килотоннах</h3>
+      <p><b>Килотонна (кт)</b> — энергия взрыва, эквивалентная тысяче тонн тротила. Тактические заряды — единицы кт; стратегические — сотни и тысячи кт.</p>
+      <p>Ударная волна уносит до 60% энергии, термическое излучение — около 35%, остаток — проникающая радиация и радиоактивные осадки.</p>
+    </article>
+
+    <article class="glass-card info-card">
+      <div class="info-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><path d="M24 6 L42 38 H6 Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><circle cx="24" cy="28" r="4" fill="currentColor"/></svg>
+      </div>
+      <h3>Почему город — главная цель</h3>
+      <p>Город концентрирует людей, инфраструктуру и промышленность. Удар по мегаполису бьёт не только по людям, но и по экономике целых регионов.</p>
+      <p>Именно поэтому сдерживание — «взаимное гарантированное уничтожение» — стало основой мировой безопасности с 1960-х годов.</p>
+    </article>
+
+    <article class="glass-card info-card">
+      <div class="info-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="3"/><path d="M24 12 v12 l9 6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+      </div>
+      <h3>Три фазы поражения</h3>
+      <p><b>0–секунды:</b> световая вспышка и термический импульс — ожоги, пожары.</p>
+      <p><b>Секунды–минуты:</b> ударная волна разрушает здания, осколки убивают дальше, чем сам фронт волны.</p>
+      <p><b>Часы–месяцы:</b> радиоактивные осадки («fallout») — невидимая угроза для оставшихся в городе людей.</p>
+    </article>
+  </div>
+
+</section>
+<!-- ===== ВКЛАДКА 02 · ФИЗИКА ВЗРЫВА ===== -->
+<section class="tab-panel" id="tab-physics" role="tabpanel">
+
+  <h2 class="section-title"><span class="section-title__num">02</span>Физика взрыва: что происходит за секунды</h2>
+
+  <div class="physics-grid">
+    <article class="glass-card info-card physics-card">
+      <div class="info-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="none" stroke="currentColor" stroke-width="3"/><path d="M24 8 A16 16 0 0 1 24 40 Z" fill="currentColor"/></svg>
+      </div>
+      <h3>Ударная волна</h3>
+      <p>Сверхзвуковой фронт сжатого воздуха. Давление на фронте в сотню раз выше атмосферного: здания срывает, как крышки с банок.</p>
+      <p>Опаснее всего — не сам воздух, а осколки разрушаемых зданий: они летят дальше фронта и поражают людей за сотни метров.</p>
+    </article>
+
+    <article class="glass-card info-card physics-card">
+      <div class="info-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><path d="M24 6 C30 14 38 18 38 29 A14 14 0 0 1 10 29 C10 18 18 14 24 6 Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M24 20 c3 4 5 6 5 9 a5 5 0 0 1 -10 0 c0 -3 2 -5 5 -9 Z" fill="currentColor"/></svg>
+      </div>
+      <h3>Термическое излучение</h3>
+      <p>Световая вспышка ярче солнца в тысячи раз. На расстоянии до нескольких километров — ожоги третьей степени, возгорание лёгких материалов.</p>
+      <p>Огненный шар поднимается на километры и превращает нижние этажи зданий в зоне поражения в пепел.</p>
+    </article>
+
+    <article class="glass-card info-card physics-card">
+      <div class="info-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="3"/><path d="M24 15 v9 l6 5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="18" cy="18" r="2" fill="currentColor"/><circle cx="30" cy="30" r="2" fill="currentColor"/></svg>
+      </div>
+      <h3>Радиоактивные осадки</h3>
+      <p>Огненный шар поднимает грунт и обломки; частицы, налипшие на них, выпадают «грибом» за десятки километров от эпицентра.</p>
+      <p>Бета-излучение осадков опасно в первые недели: 90% активности уходит примерно за 10 дней (правило «7 часов — 10 раз»).</p>
+    </article>
+
+    <article class="glass-card info-card physics-card">
+      <div class="info-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><path d="M24 6 L42 38 H6 Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><circle cx="24" cy="28" r="4" fill="currentColor"/></svg>
+      </div>
+      <h3>Проникающая радиация</h3>
+      <p>Нейтроны и гамма-кванты в первые секунды: смертельные дозы на расстоянии до 1–2 км от эпицентра.</p>
+      <p>После взрыва вклад проникающей радиации быстро гаснет — главную угрозу на дистанции берут на себя осадки.</p>
+    </article>
+  </div>
+
+  <h3 class="sub-title">Изотопы, которые делают оружие опасным</h3>
+  <div class="glass-card table-card">
+    <table class="iso-table">
+      <thead><tr><th>Изотоп</th><th>Роль</th><th>Период полураспада</th></tr></thead>
+      <tbody>
+        <tr><td>Уран-235</td><td>Фиссионный заряд (натуральный уран содержит лишь 0,7% U-235 — его нужно обогащать)</td><td>~704 млн лет</td></tr>
+        <tr><td>Плутоний-239</td><td>Фиссионный заряд (получается в реакторах из урана-238)</td><td>24 100 лет</td></tr>
+        <tr><td>Тритий</td><td>«Бустер» — усиливает фиссионную ступень синтезом</td><td>12,3 года</td></tr>
+        <tr><td>Цезий-137</td><td>Главный компонент радиоактивных осадков</td><td>30 лет</td></tr>
+        <tr><td>Йод-131</td><td>Осадки; накапливается в щитовидной железе — опасен для детей</td><td>8 дней</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>
+<!-- ===== ВКЛАДКА 03 · ГОРОД ПОД УДАРОМ ===== -->
+<section class="tab-panel" id="tab-city" role="tabpanel">
+
+  <h2 class="section-title"><span class="section-title__num">03</span>Город под ударом: зоны поражения</h2>
+  <p class="lead-text">Схема условного города с сетью улиц. Подвигайте ползунок мощности — кольца покажут, как растут зоны поражения (условные оценки для воздушного взрыва).</p>
+
+  <div class="sim glass-card">
+    <div class="sim__controls">
+      <label for="yield-range">Мощность заряда</label>
+      <input type="range" id="yield-range" min="1" max="500" value="20" step="1">
+      <output class="sim__value" id="yield-value">20 кт</output>
+    </div>
+
+    <div class="sim__map-wrap">
+      <svg viewBox="0 0 800 560" class="sim__map" aria-label="Схема города с зонами поражения">
+        <defs>
+          <pattern id="city-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M40 0 H0 V40" fill="none" stroke="#5a3d22" stroke-width="1.5"/>
+          </pattern>
+        </defs>
+
+        <!-- город -->
+        <rect x="60" y="60" width="680" height="440" fill="url(#city-grid)" opacity=".55"/>
+        <g fill="#2b1c10">
+          <rect x="90" y="90" width="70" height="50"/><rect x="190" y="80" width="60" height="70"/>
+          <rect x="300" y="100" width="90" height="45"/><rect x="430" y="85" width="70" height="60"/>
+          <rect x="540" y="95" width="80" height="50"/><rect x="650" y="80" width="60" height="70"/>
+          <rect x="100" y="200" width="80" height="60"/><rect x="230" y="210" width="60" height="50"/>
+          <rect x="340" y="190" width="70" height="70"/><rect x="460" y="205" width="80" height="55"/>
+          <rect x="590" y="195" width="70" height="65"/>
+          <rect x="95" y="320" width="65" height="60"/><rect x="210" y="330" width="80" height="50"/>
+          <rect x="330" y="315" width="60" height="70"/><rect x="440" y="325" width="90" height="55"/>
+          <rect x="570" y="310" width="70" height="65"/><rect x="660" y="330" width="60" height="50"/>
+          <rect x="120" y="420" width="80" height="55"/><rect x="260" y="430" width="70" height="50"/>
+          <rect x="390" y="415" width="80" height="60"/><rect x="520" y="425" width="70" height="50"/>
+        </g>
+
+        <!-- зоны поражения (центрированы на 400,280) -->
+        <circle id="zone-fallout" cx="400" cy="280" r="120" class="zone zone--fallout"/>
+        <circle id="zone-thermal" cx="400" cy="280" r="70" class="zone zone--thermal"/>
+        <circle id="zone-blast" cx="400" cy="280" r="45" class="zone zone--blast"/>
+        <circle cx="400" cy="280" r="6" fill="#ffd9a0"/>
+
+        <!-- легенда -->
+        <g font-family="Manrope, sans-serif" font-size="13">
+          <rect x="70" y="500" width="14" height="14" rx="3" fill="#ff8c42" opacity=".8"/>
+          <text x="92" y="512" fill="#e8d5bd">Уничтожение зданий</text>
+          <rect x="260" y="500" width="14" height="14" rx="3" fill="#ffb35c" opacity=".7"/>
+          <text x="282" y="512" fill="#e8d5bd">Сильные разрушения</text>
+          <rect x="450" y="500" width="14" height="14" rx="3" fill="#ffd9a0" opacity=".6"/>
+          <text x="472" y="512" fill="#e8d5bd">Ожоги / осадки</text>
+        </g>
+      </svg>
+    </div>
+
+    <ul class="sim__readout">
+      <li><span class="dot dot--blast"></span>Уничтожение: <b id="ro-blast">—</b></li>
+      <li><span class="dot dot--thermal"></span>Сильные разрушения: <b id="ro-thermal">—</b></li>
+      <li><span class="dot dot--fallout"></span>Осадки (опасная доза): <b id="ro-fallout">—</b></li>
+    </ul>
+  </div>
+
+  <h3 class="sub-title">Что происходит в городе по минутам</h3>
+  <ol class="timeline">
+    <li><span class="timeline__time">0 с</span><p>Вспышка ярче солнца. Люди на открытых местах получают ожоги; стеклянные фасады разлетаются.</p></li>
+    <li><span class="timeline__time">~15–30 с</span><p>Ударная волна доходит до центра города: обрушение стен, осколки стекла и бетона — главная причина гибели людей на дистанции.</p></li>
+    <li><span class="timeline__time">минуты</span><p>Огненный шар поднимается; пожары в зоне термического излучения сливаются в единый «пожарный шторм».</p></li>
+    <li><span class="timeline__time">часы</span><p>Грибовидное облако рассеивает осадки по ветру: зона радиоактивного заражения вытягивается на десятки километров.</p></li>
+    <li><span class="timeline__time">дни–недели</span><p>Радиоактивный «дождь» из частиц Cs-137 и I-131. Город становится зоной отчуждения; эвакуация — единственный способ снизить дозу.</p></li>
+  </ol>
+
+</section>
+<!-- ===== ВКЛАДКА 04 · ВЫЖИВАНИЕ И ЗАЩИТА ===== -->
+<section class="tab-panel" id="tab-survival" role="tabpanel">
+
+  <h2 class="section-title"><span class="section-title__num">04</span>Выживание и защита: что действительно работает</h2>
+  <p class="lead-text">Главный принцип радиационной безопасности — триада «время, дистанция, укрытие». Ниже — общие правила гражданской обороны.</p>
+
+  <div class="survival-grid">
+    <article class="glass-card info-card survival-card">
+      <svg class="survival-card__bg" viewBox="0 0 200 140" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <path d="M100 8 L176 34 V86 C176 118 140 132 100 134 C60 132 24 118 24 86 V34 Z" fill="none" stroke="#e8a33d" stroke-width="2.5" opacity=".5"/>
+        <path d="M100 26 L158 46 V84 C158 106 132 117 100 119 C68 117 42 106 42 84 V46 Z" fill="none" stroke="#e8a33d" stroke-width="1.5" opacity=".3"/>
+      </svg>
+      <div class="info-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><path d="M24 6 L40 13 V27 C40 37 32 42 24 44 C16 42 8 37 8 27 V13 Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>Укрытие: чем толще, тем лучше</h3>
+      <p>Подвальные перекрытия и бетонные стены ослабляют гамма-излучение в десятки раз; несколько сантиметров свинца — ещё сильнее.</p>
+      <p>В квартире безопаснее всего центр здания: комнаты без окон со стороны взрыва.</p>
+    </article>
+
+    <article class="glass-card info-card survival-card">
+      <svg class="survival-card__bg" viewBox="0 0 200 140" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <circle cx="100" cy="70" r="58" fill="none" stroke="#e8a33d" stroke-width="2.5" opacity=".5"/>
+        <path d="M100 40 V70 L126 86" fill="none" stroke="#e8a33d" stroke-width="2" opacity=".5" stroke-linecap="round"/>
+      </svg>
+      <div class="info-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="3"/><path d="M24 12 v12 l9 6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+      </div>
+      <h3>Время: дистанция от момента</h3>
+      <p>Первые сутки — самые опасные: именно тогда выпадает основная активность осадков.</p>
+      <p>Правило «7 часов — 10 раз»: каждые 7 часов радиация падает в 10 раз. Через ~10 дней остаётся около 1%.</p>
+    </article>
+
+    <article class="glass-card info-card survival-card">
+      <svg class="survival-card__bg" viewBox="0 0 200 140" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <circle cx="100" cy="70" r="56" fill="none" stroke="#e8a33d" stroke-width="2.5" opacity=".5"/>
+        <circle cx="100" cy="70" r="34" fill="none" stroke="#e8a33d" stroke-width="1.5" opacity=".35"/>
+        <circle cx="100" cy="70" r="12" fill="none" stroke="#e8a33d" stroke-width="1.5" opacity=".45"/>
+      </svg>
+      <div class="info-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="none" stroke="currentColor" stroke-width="3"/><path d="M24 8 A16 16 0 0 1 24 40 Z" fill="currentColor"/></svg>
+      </div>
+      <h3>Дистанция: уходить от эпицентра</h3>
+      <p>Радиация падает с квадратом расстояния. Эвакуация — главная мера, но только в сторону, перпендикулярную ветру.</p>
+      <p>Не уходите по ветру — именно туда дрейфует облако осадков.</p>
+    </article>
+
+    <article class="glass-card info-card survival-card">
+      <svg class="survival-card__bg" viewBox="0 0 200 140" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <path d="M60 30 h80 v50 a40 40 0 0 1 -80 0 Z" fill="none" stroke="#e8a33d" stroke-width="2.5" opacity=".5"/>
+        <rect x="78" y="60" width="44" height="26" rx="8" fill="none" stroke="#e8a33d" stroke-width="1.5" opacity=".4"/>
+      </svg>
+      <div class="info-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><path d="M24 6 C32 6 38 12 38 20 V34 A14 14 0 0 1 10 34 V20 C10 12 16 6 24 6 Z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M17 24 h14 M24 17 v14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+      </div>
+      <h3>Защита людей</h3>
+      <p>Респиратор или влажная ткань защищают от радиоактивной пыли; герметичные продукты и вода — от внутреннего облучения.</p>
+      <p>Йодные таблетки защищают щитовидную железу от йода-131, но только при приёме до облучения.</p>
+    </article>
+  </div>
+
+  <div class="glass-card rule-banner">
+    <span class="rule-banner__mark" aria-hidden="true">!</span>
+    <p><b>Главное:</b> в реальной чрезвычайной ситуации действуйте по указаниям органов гражданской обороны и местных властей. Этот сайт — только образовательный.</p>
+  </div>
+
+</section>
+<!-- ===== ВКЛАДКА 05 · ИСТОРИЯ И ЦИФРЫ ===== -->
+<section class="tab-panel" id="tab-history" role="tabpanel">
+
+  <h2 class="section-title"><span class="section-title__num">05</span>История и цифры: почему мир держится</h2>
+
+  <ol class="timeline timeline--history">
+    <li><span class="timeline__time">1945</span><p>Хиросима («Литл Бой», ~15 кт) и Нагасаки («Фэт Мэн», ~21 кт): более 200 тысяч погибших к концу года. Единственное применение в войне.</p></li>
+    <li><span class="timeline__time">1949</span><p>СССР взрывает первую атомную бомбу; вскоре — американская водородная (1952). Начинается эпоха термоядерного оружия.</p></li>
+    <li><span class="timeline__time">1962</span><p>Карибский кризис: 13 дней, когда мир был ближе всего к ядерной войне. После — «горячая линия» и договоры по контролю вооружений.</p></li>
+    <li><span class="timeline__time">1963–70-е</span><p>Договор о частичном запрещении испытаний (1963) и СОР-1/СОР-2: первые попытки ограничить гонку вооружений.</p></li>
+    <li><span class="timeline__time">1985</span><p>Саммит Рейгана и Горбачёва в Женеве: «в ядерной войне не бывает победителей». За ним — договор СНВ (1991).</p></li>
+    <li><span class="timeline__time">2017</span><p>Договор о запрещении ядерного оружия вступает в силу — но ни одно ядерное государство его не подписало.</p></li>
+  </ol>
+
+  <h3 class="sub-title">Цифры, которые стоит запомнить</h3>
+  <div class="cards-grid cards-grid--stats">
+    <article class="glass-card stat-card"><span class="stat__num" data-count="12500">0</span><p>приблизительно ядерных боезарядов в мире (все страны)</p></article>
+    <article class="glass-card stat-card"><span class="stat__num" data-count="9">0</span><p>ядерных держав: США, Россия, Китай, Франция, Великобритания, Индия, Пакистан, Израиль*, КНДР (*не подтверждено официально)</p></article>
+    <article class="glass-card stat-card"><span class="stat__num" data-count="2000">0</span><p>ядерных испытаний проведено в XX веке (последние — 1998, Индия и Пакистан)</p></article>
+    <article class="glass-card stat-card"><span class="stat__num" data-count="50">0</span><p>лет с последнего ядерного испытания; более 60 лет с единственного применения в войне</p></article>
+  </div>
+
+  <div class="glass-card quote-card">
+    <blockquote>«Главное — не то, что оружие существует. Главное — сделать его ненужным. Это задача каждого поколения».</blockquote>
+    <cite>— дух Договора о нераспространении ядерного оружия (1968)</cite>
+  </div>
+
+</section>
+</main>
+
+<footer class="site-footer">
+  <p><b>ЯДРО.</b> — образовательный проект об опасности ядерного оружия в городской застройке.</p>
+  <p>Все цифры приблизительные и приведены в учебных целях. Сайт не является источником оперативной информации.</p>
+  <span class="footer__mark" aria-hidden="true">☢</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
